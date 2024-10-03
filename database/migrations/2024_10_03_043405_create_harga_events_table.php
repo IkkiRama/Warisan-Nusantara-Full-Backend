@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('harga_events', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_event')->constrained('events')->onDelete('cascade');
+            $table->string('nama');
+            $table->decimal('harga', 15, 2);
             $table->timestamps();
         });
     }

@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('kontaks', function (Blueprint $table) {
             $table->id();
+            $table->string('email')->unique();
+            $table->text('pesan');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
